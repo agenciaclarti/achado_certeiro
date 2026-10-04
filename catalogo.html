@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ff5a1f">
+    <meta name="description" content="Explore o catálogo de achadinhos e recomendações do Achado Certeiro.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/catalog.css">
+    <title>Catálogo de produtos — Achado Certeiro</title>
+    <script>document.documentElement.classList.remove('no-js');</script>
+    <script type="module" src="js/catalog-page.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#catalog-content">Ir para os produtos</a>
+    <div class="announcement"><div class="container announcement__inner"><p><strong>Achou, gostou, conferiu.</strong> A compra acontece na loja parceira.</p><a href="index.html#aviso-afiliados">Como funcionam os links <span aria-hidden="true">↗</span></a></div></div>
+
+    <header class="catalog-header">
+      <div class="container catalog-header__inner">
+        <a class="brand" href="index.html" aria-label="Achado Certeiro — página inicial"><img src="assets/logo/logo-mark.svg" alt="" width="48" height="48"><span class="brand__name">Achado<br><strong>Certeiro</strong></span></a>
+        <form class="search catalog-header__search" role="search" action="catalogo.html" method="get" data-search-form>
+          <label class="sr-only" for="catalog-search-header">Pesquisar no catálogo</label>
+          <svg class="icon search__icon" aria-hidden="true"><use href="assets/icons/icons.svg#search"></use></svg>
+          <input id="catalog-search-header" name="q" type="search" placeholder="Pesquise no catálogo" autocomplete="off" data-search-input>
+          <button class="search__button" type="submit">Buscar</button>
+        </form>
+        <a class="catalog-header__home" href="index.html"><svg class="icon" aria-hidden="true"><use href="assets/icons/icons.svg#home"></use></svg><span>Início</span></a>
+      </div>
+    </header>
+
+    <main id="catalog-content">
+      <div class="container catalog-hero">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Início</a></li><li><span aria-hidden="true">/</span><span data-breadcrumb-current>Catálogo</span></li></ol></nav>
+        <div class="catalog-hero__heading"><div><p class="eyebrow">Explore os achados</p><h1 data-page-title>Todos os produtos</h1><p data-page-description>Use a busca e os filtros para encontrar produtos que combinam com você.</p></div><div class="catalog-hero__mark" aria-hidden="true"><svg class="icon"><use href="assets/icons/icons.svg#search"></use></svg></div></div>
+        <form class="search catalog-mobile-search" role="search" action="catalogo.html" method="get" data-search-form><label class="sr-only" for="catalog-search-mobile">Pesquisar no catálogo</label><svg class="icon search__icon" aria-hidden="true"><use href="assets/icons/icons.svg#search"></use></svg><input id="catalog-search-mobile" name="q" type="search" placeholder="Pesquise no catálogo" autocomplete="off" data-search-input><button class="search__button" type="submit"><span class="sr-only">Buscar</span><svg class="icon" aria-hidden="true"><use href="assets/icons/icons.svg#arrow"></use></svg></button></form>
+      </div>
+
+      <section class="container catalog-shell" aria-labelledby="catalog-list-title">
+        <div class="mobile-catalog-tools">
+          <button class="filter-open" type="button" data-filter-open><svg class="icon" aria-hidden="true"><use href="assets/icons/icons.svg#grid"></use></svg> Filtros <span data-active-filter-count hidden>0</span></button>
+          <label class="mobile-sort"><span class="sr-only">Ordenar produtos</span><select data-sort-mobile><option value="relevance">Mais relevantes</option><option value="newest">Mais recentes</option><option value="price-asc">Menor preço</option><option value="price-desc">Maior preço</option><option value="discount-desc">Maior desconto</option><option value="rating-desc">Melhor avaliação</option></select></label>
+        </div>
+
+        <div class="filter-backdrop" data-filter-close hidden></div>
+        <aside class="filter-panel" aria-labelledby="filters-title" data-filter-panel>
+          <div class="filter-panel__header"><div><p class="eyebrow">Refine sua busca</p><h2 id="filters-title">Filtros</h2></div><button class="icon-button filter-panel__close" type="button" data-filter-close><span class="sr-only">Fechar filtros</span><svg class="icon"><use href="assets/icons/icons.svg#close"></use></svg></button></div>
+          <form data-filter-form>
+            <div class="filter-group"><label for="filter-category">Categoria</label><select id="filter-category" name="categoria" data-filter-category><option value="all">Todas as categorias</option></select></div>
+            <div class="filter-group"><label for="filter-subcategory">Subcategoria</label><select id="filter-subcategory" name="subcategoria" data-filter-subcategory><option value="all">Todas as subcategorias</option></select></div>
+            <fieldset class="filter-group"><legend>Faixa de preço</legend><div class="price-inputs"><label>De <span class="price-input"><span>R$</span><input name="minPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0" data-filter-min-price></span></label><label>Até <span class="price-input"><span>R$</span><input name="maxPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Sem limite" data-filter-max-price></span></label></div></fieldset>
+            <div class="filter-group"><label for="filter-discount">Desconto mínimo</label><select id="filter-discount" name="desconto" data-filter-discount><option value="">Qualquer desconto</option><option value="10">10% ou mais</option><option value="20">20% ou mais</option><option value="30">30% ou mais</option></select></div>
+            <div class="filter-group"><label for="filter-rating">Avaliação mínima</label><select id="filter-rating" name="avaliacao" data-filter-rating><option value="">Qualquer avaliação</option><option value="4">4 estrelas ou mais</option><option value="4.5">4,5 estrelas ou mais</option></select></div>
+            <fieldset class="filter-group"><legend>Tags</legend><div class="tag-options" data-filter-tags></div></fieldset>
+            <div class="filter-group filter-group--check"><label><input type="checkbox" name="destaques" value="1" data-filter-featured><span>Somente produtos em destaque</span></label></div>
+            <div class="filter-panel__actions"><button class="button button--primary" type="submit">Aplicar filtros</button><button class="clear-filters" type="button" data-clear-filters>Limpar filtros</button></div>
+          </form>
+        </aside>
+
+        <div class="catalog-results">
+          <div class="catalog-results__toolbar">
+            <div><h2 class="sr-only" id="catalog-list-title">Lista de produtos</h2><p class="result-count" aria-live="polite" data-result-count></p></div>
+            <label class="desktop-sort">Ordenar por <select data-sort-desktop><option value="relevance">Mais relevantes</option><option value="newest">Mais recentes</option><option value="price-asc">Menor preço</option><option value="price-desc">Maior preço</option><option value="discount-desc">Maior desconto</option><option value="rating-desc">Melhor avaliação</option></select></label>
+          </div>
+          <div class="active-filters" aria-label="Filtros ativos" data-active-filters hidden></div>
+          <div class="catalog-product-grid" data-product-grid></div>
+          <div class="catalog-empty" data-empty-state hidden><svg class="icon" aria-hidden="true"><use href="assets/icons/icons.svg#search"></use></svg><h2>Nenhum produto encontrado</h2><p>Altere os filtros ou tente pesquisar por outro termo.</p><button class="button button--primary" type="button" data-clear-filters>Limpar filtros</button></div>
+          <div class="load-more" data-load-more-wrap hidden><p data-pagination-status></p><button class="button button--light" type="button" data-load-more>Carregar mais</button></div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="affiliate-notice"><div class="container affiliate-notice__inner"><svg class="icon" aria-hidden="true"><use href="assets/icons/icons.svg#info"></use></svg><p><strong>Antes de abrir uma oferta:</strong> você será direcionado para uma loja parceira, responsável pelo preço final, estoque, pagamento e entrega.</p></div></aside>
+    <footer class="catalog-footer"><div class="container catalog-footer__inner"><a class="brand" href="index.html"><img src="assets/logo/logo-mark.svg" alt="" width="44" height="44"><span class="brand__name">Achado<br><strong>Certeiro</strong></span></a><p>Curadoria independente de produtos e boas descobertas.</p><a href="index.html#aviso-afiliados">Aviso de afiliados</a><a href="mailto:contato@achadocerteiro.com.br">Contato</a></div></footer>
+    <noscript><div class="noscript">Ative o JavaScript para visualizar e filtrar o catálogo.</div></noscript>
+  </body>
+</html>
